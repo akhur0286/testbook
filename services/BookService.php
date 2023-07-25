@@ -75,6 +75,7 @@ class BookService
 				$this->saveFile($model, $file);
 			}
 
+			BookToAuthor::deleteAll(['book_id' => $model->id]);
 			if(!empty($form->authors)) {
 				$this->saveAuthors($model, $form->authors);
 			}
